@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{D2344A76-1AC6-49D5-BA16-D1FB49BB9178}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DreamKnight</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)external\Visual Leak Detector\include;$(SolutionDir)external\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)external\Visual Leak Detector\lib\Win32;$(SolutionDir)external\libs;$(LibraryPath)</LibraryPath>
+    <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)external\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)external\libs;$(LibraryPath)</LibraryPath>
+    <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)external\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)external\libs;$(LibraryPath)</LibraryPath>
+    <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>FBX_CONV_EXPORTS;FBXSDK_SHARED;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)external\include;$(SolutionDir)external\include\FBX</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <AdditionalOptions>/MP8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)external\libs;$(SolutionDir)external\libs\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+    </Link>
+    <FxCompile>
+      <ShaderModel>4.0</ShaderModel>
+    </FxCompile>
+    <PreBuildEvent>
+      <Command>(robocopy "$(SolutionDir)external\bins" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 (robocopy "$(SolutionDir)external\bins\$(PlatformTarget)" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 (robocopy "$(SolutionDir)external\bins\$(PlatformTarget)\$(Configuration)" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 exit 0</Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>FOR %%p IN ($(OutDir) DO FOR %%t IN (*.dll) DO del /s %%p\%%t</Command>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>FBX_CONV_EXPORTS;FBXSDK_SHARED;x64;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile />
+      <AdditionalIncludeDirectories>$(SolutionDir)external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <AdditionalOptions>/MP8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)external\libs;$(SolutionDir)external\libs\x64\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <FxCompile>
+      <ShaderModel>4.0</ShaderModel>
+    </FxCompile>
+    <PreBuildEvent>
+      <Command>(robocopy "$(SolutionDir)external\bins" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 (robocopy "$(SolutionDir)external\bins\$(PlatformTarget)" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 (robocopy "$(SolutionDir)external\bins\$(PlatformTarget)\$(Configuration)" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 exit 0</Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>FOR %%p IN ($(OutDir) DO FOR %%t IN (*.dll) DO del /s %%p\%%t</Command>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>FBX_CONV_EXPORTS;FBXSDK_SHARED;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)external\include;$(SolutionDir)external\include\FBX</AdditionalIncludeDirectories>
+      <AdditionalOptions>/MP8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)external\libs;$(SolutionDir)external\libs\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <FxCompile>
+      <ShaderModel>4.0</ShaderModel>
+    </FxCompile>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>FOR %%p IN ($(OutDir) DO FOR %%t IN (*.dll) DO del /s %%p\%%t</Command>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>@echo off
+(robocopy "$(SolutionDir)external\bins" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 (robocopy "$(SolutionDir)external\bins\$(PlatformTarget)" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 (robocopy "$(SolutionDir)external\bins\$(PlatformTarget)\$(Configuration)" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 exit 0</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>FBX_CONV_EXPORTS;FBXSDK_SHARED;x64;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <AdditionalOptions>/MP8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)external\libs;$(SolutionDir)external\libs\x64\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <FxCompile>
+      <ShaderModel>4.0</ShaderModel>
+    </FxCompile>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>FOR %%p IN ($(OutDir) DO FOR %%t IN (*.dll) DO del /s %%p\%%t</Command>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>@echo off
+(robocopy "$(SolutionDir)external\bins" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 (robocopy "$(SolutionDir)external\bins\$(PlatformTarget)" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 (robocopy "$(SolutionDir)external\bins\$(PlatformTarget)\$(Configuration)" "$(OutputPath)\") ^&amp; IF %ERRORLEVEL% LEQ 4 exit 0</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AABBCollider.h" />
+    <ClInclude Include="AnimationComponent.h" />
+    <ClInclude Include="AnimationData.h" />
+    <ClInclude Include="AudioManager.h" />
+    <ClInclude Include="BaseNet_Comp.h" />
+    <ClInclude Include="BSPTree.h" />
+    <ClInclude Include="Canvas.h" />
+    <ClInclude Include="CapsuleCollider.h" />
+    <ClInclude Include="Chest.h" />
+    <ClInclude Include="CollidableComponent.h" />
+    <ClInclude Include="Collider.h" />
+    <ClInclude Include="CollisionDetection.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="Console.h" />
+    <ClInclude Include="CreditButton.h" />
+    <ClInclude Include="CreditState.h" />
+    <ClInclude Include="DeadGameState.h" />
+    <ClInclude Include="ExitButton.h" />
+    <ClInclude Include="Frustum.h" />
+    <ClInclude Include="glm.h" />
+    <ClInclude Include="GuiHealthbar.h" />
+    <ClInclude Include="NetEnemyRangeComp.h" />
+    <ClInclude Include="Projectile.h" />
+    <ClInclude Include="HitManagerComponent.h" />
+    <ClInclude Include="DataManager.h" />
+    <ClInclude Include="DevConsole.h" />
+    <ClInclude Include="DKEngine.h" />
+    <ClInclude Include="DreamKnight.h" />
+    <ClInclude Include="EngineState.h" />
+    <ClInclude Include="Font.h" />
+    <ClInclude Include="FontManager.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GuiElement.h" />
+    <ClInclude Include="GuiImage.h" />
+    <ClInclude Include="GuiText.h" />
+    <ClInclude Include="GuiTextbox.h" />
+    <ClInclude Include="HostButton.h" />
+    <ClInclude Include="ItemCollisionEvents.h" />
+    <ClInclude Include="ItemRef.h" />
+    <ClInclude Include="Items.h" />
+    <ClInclude Include="Item_Base.h" />
+    <ClInclude Include="LevelContainer.h" />
+    <ClInclude Include="LevelGeneration\LevelGenerator.h" />
+    <ClInclude Include="LightComponent.h" />
+    <ClInclude Include="lodepng\lodepng.h" />
+    <ClInclude Include="InputType.h" />
+    <ClInclude Include="MainMenuButton.h" />
+    <ClInclude Include="MaterialComponent.h" />
+    <ClInclude Include="MenuState.h" />
+    <ClInclude Include="MeshCollider.h" />
+    <ClInclude Include="NavMesh.h" />
+    <ClInclude Include="NetChestComponent.h" />
+    <ClInclude Include="NetEnemy.h" />
+    <ClInclude Include="PickupControlComponent.h" />
+    <ClInclude Include="ProjectileComp.h" />
+    <ClInclude Include="ServerGameState.h" />
+    <ClInclude Include="ServerLobbyState.h" />
+    <ClInclude Include="ServerState.h" />
+    <ClInclude Include="TimedEffects.h" />
+    <ClInclude Include="QuadTree.h" />
+    <ClInclude Include="InventorySubComponent.h" />
+    <ClInclude Include="Pickup.h" />
+    <ClInclude Include="PickupManager.h" />
+    <ClInclude Include="ScreamingComponent.h" />
+    <ClInclude Include="StatScript.h" />
+    <ClInclude Include="NetEnemyComp.h" />
+    <ClInclude Include="NetPlayer.h" />
+    <ClInclude Include="NetPlayerComponent.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="MeshComponent.h" />
+    <ClInclude Include="NetworkVenus.h" />
+    <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="LevelGeneration\Tile.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="NetClient.h" />
+    <ClInclude Include="NetServer.h" />
+    <ClInclude Include="NetworkDefines.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectType.h" />
+    <ClInclude Include="RAKNET\AutopatcherPatchContext.h" />
+    <ClInclude Include="RAKNET\AutopatcherRepositoryInterface.h" />
+    <ClInclude Include="RAKNET\Base64Encoder.h" />
+    <ClInclude Include="RAKNET\BitStream.h" />
+    <ClInclude Include="RAKNET\CCRakNetSlidingWindow.h" />
+    <ClInclude Include="RAKNET\CCRakNetUDT.h" />
+    <ClInclude Include="RAKNET\CheckSum.h" />
+    <ClInclude Include="RAKNET\CloudClient.h" />
+    <ClInclude Include="RAKNET\CloudCommon.h" />
+    <ClInclude Include="RAKNET\CloudServer.h" />
+    <ClInclude Include="RAKNET\CommandParserInterface.h" />
+    <ClInclude Include="RAKNET\ConnectionGraph2.h" />
+    <ClInclude Include="RAKNET\ConsoleServer.h" />
+    <ClInclude Include="RAKNET\DataCompressor.h" />
+    <ClInclude Include="RAKNET\DirectoryDeltaTransfer.h" />
+    <ClInclude Include="RAKNET\DR_SHA1.h" />
+    <ClInclude Include="RAKNET\DS_BinarySearchTree.h" />
+    <ClInclude Include="RAKNET\DS_BPlusTree.h" />
+    <ClInclude Include="RAKNET\DS_BytePool.h" />
+    <ClInclude Include="RAKNET\DS_ByteQueue.h" />
+    <ClInclude Include="RAKNET\DS_Hash.h" />
+    <ClInclude Include="RAKNET\DS_Heap.h" />
+    <ClInclude Include="RAKNET\DS_HuffmanEncodingTree.h" />
+    <ClInclude Include="RAKNET\DS_HuffmanEncodingTreeFactory.h" />
+    <ClInclude Include="RAKNET\DS_HuffmanEncodingTreeNode.h" />
+    <ClInclude Include="RAKNET\DS_LinkedList.h" />
+    <ClInclude Include="RAKNET\DS_List.h" />
+    <ClInclude Include="RAKNET\DS_Map.h" />
+    <ClInclude Include="RAKNET\DS_MemoryPool.h" />
+    <ClInclude Include="RAKNET\DS_Multilist.h" />
+    <ClInclude Include="RAKNET\DS_OrderedChannelHeap.h" />
+    <ClInclude Include="RAKNET\DS_OrderedList.h" />
+    <ClInclude Include="RAKNET\DS_Queue.h" />
+    <ClInclude Include="RAKNET\DS_QueueLinkedList.h" />
+    <ClInclude Include="RAKNET\DS_RangeList.h" />
+    <ClInclude Include="RAKNET\DS_Table.h" />
+    <ClInclude Include="RAKNET\DS_ThreadsafeAllocatingQueue.h" />
+    <ClInclude Include="RAKNET\DS_Tree.h" />
+    <ClInclude Include="RAKNET\DS_WeightedGraph.h" />
+    <ClInclude Include="RAKNET\DynDNS.h" />
+    <ClInclude Include="RAKNET\EmailSender.h" />
+    <ClInclude Include="RAKNET\EmptyHeader.h" />
+    <ClInclude Include="RAKNET\EpochTimeToString.h" />
+    <ClInclude Include="RAKNET\Export.h" />
+    <ClInclude Include="RAKNET\FileList.h" />
+    <ClInclude Include="RAKNET\FileListNodeContext.h" />
+    <ClInclude Include="RAKNET\FileListTransfer.h" />
+    <ClInclude Include="RAKNET\FileListTransferCBInterface.h" />
+    <ClInclude Include="RAKNET\FileOperations.h" />
+    <ClInclude Include="RAKNET\FormatString.h" />
+    <ClInclude Include="RAKNET\FullyConnectedMesh2.h" />
+    <ClInclude Include="RAKNET\Getche.h" />
+    <ClInclude Include="RAKNET\Gets.h" />
+    <ClInclude Include="RAKNET\GetTime.h" />
+    <ClInclude Include="RAKNET\gettimeofday.h" />
+    <ClInclude Include="RAKNET\GridSectorizer.h" />
+    <ClInclude Include="RAKNET\HTTPConnection.h" />
+    <ClInclude Include="RAKNET\HTTPConnection2.h" />
+    <ClInclude Include="RAKNET\IncrementalReadInterface.h" />
+    <ClInclude Include="RAKNET\InternalPacket.h" />
+    <ClInclude Include="RAKNET\Itoa.h" />
+    <ClInclude Include="RAKNET\Kbhit.h" />
+    <ClInclude Include="RAKNET\LinuxStrings.h" />
+    <ClInclude Include="RAKNET\LocklessTypes.h" />
+    <ClInclude Include="RAKNET\LogCommandParser.h" />
+    <ClInclude Include="RAKNET\MessageFilter.h" />
+    <ClInclude Include="RAKNET\MessageIdentifiers.h" />
+    <ClInclude Include="RAKNET\MTUSize.h" />
+    <ClInclude Include="RAKNET\NativeFeatureIncludes.h" />
+    <ClInclude Include="RAKNET\NativeFeatureIncludesOverrides.h" />
+    <ClInclude Include="RAKNET\NativeTypes.h" />
+    <ClInclude Include="RAKNET\NatPunchthroughClient.h" />
+    <ClInclude Include="RAKNET\NatPunchthroughServer.h" />
+    <ClInclude Include="RAKNET\NatTypeDetectionClient.h" />
+    <ClInclude Include="RAKNET\NatTypeDetectionCommon.h" />
+    <ClInclude Include="RAKNET\NatTypeDetectionServer.h" />
+    <ClInclude Include="RAKNET\NetworkIDManager.h" />
+    <ClInclude Include="RAKNET\NetworkIDObject.h" />
+    <ClInclude Include="RAKNET\PacketConsoleLogger.h" />
+    <ClInclude Include="RAKNET\PacketFileLogger.h" />
+    <ClInclude Include="RAKNET\PacketizedTCP.h" />
+    <ClInclude Include="RAKNET\PacketLogger.h" />
+    <ClInclude Include="RAKNET\PacketOutputWindowLogger.h" />
+    <ClInclude Include="RAKNET\PacketPool.h" />
+    <ClInclude Include="RAKNET\PacketPriority.h" />
+    <ClInclude Include="RAKNET\PluginInterface2.h" />
+    <ClInclude Include="RAKNET\PS3Includes.h" />
+    <ClInclude Include="RAKNET\PS4Includes.h" />
+    <ClInclude Include="RAKNET\Rackspace.h" />
+    <ClInclude Include="RAKNET\RakAlloca.h" />
+    <ClInclude Include="RAKNET\RakAssert.h" />
+    <ClInclude Include="RAKNET\RakMemoryOverride.h" />
+    <ClInclude Include="RAKNET\RakNetCommandParser.h" />
+    <ClInclude Include="RAKNET\RakNetDefines.h" />
+    <ClInclude Include="RAKNET\RakNetDefinesOverrides.h" />
+    <ClInclude Include="RAKNET\RakNetSmartPtr.h" />
+    <ClInclude Include="RAKNET\RakNetSocket.h" />
+    <ClInclude Include="RAKNET\RakNetSocket2.h" />
+    <ClInclude Include="RAKNET\RakNetStatistics.h" />
+    <ClInclude Include="RAKNET\RakNetTime.h" />
+    <ClInclude Include="RAKNET\RakNetTransport2.h" />
+    <ClInclude Include="RAKNET\RakNetTypes.h" />
+    <ClInclude Include="RAKNET\RakNetVersion.h" />
+    <ClInclude Include="RAKNET\RakPeer.h" />
+    <ClInclude Include="RAKNET\RakPeerInterface.h" />
+    <ClInclude Include="RAKNET\RakSleep.h" />
+    <ClInclude Include="RAKNET\RakString.h" />
+    <ClInclude Include="RAKNET\RakThread.h" />
+    <ClInclude Include="RAKNET\RakWString.h" />
+    <ClInclude Include="RAKNET\Rand.h" />
+    <ClInclude Include="RAKNET\RandSync.h" />
+    <ClInclude Include="RAKNET\ReadyEvent.h" />
+    <ClInclude Include="RAKNET\RefCountedObj.h" />
+    <ClInclude Include="RAKNET\RelayPlugin.h" />
+    <ClInclude Include="RAKNET\ReliabilityLayer.h" />
+    <ClInclude Include="RAKNET\ReplicaEnums.h" />
+    <ClInclude Include="RAKNET\ReplicaManager3.h" />
+    <ClInclude Include="RAKNET\Router2.h" />
+    <ClInclude Include="RAKNET\RPC4Plugin.h" />
+    <ClInclude Include="RAKNET\SecureHandshake.h" />
+    <ClInclude Include="RAKNET\SendToThread.h" />
+    <ClInclude Include="RAKNET\SignaledEvent.h" />
+    <ClInclude Include="RAKNET\SimpleMutex.h" />
+    <ClInclude Include="RAKNET\SimpleTCPServer.h" />
+    <ClInclude Include="RAKNET\SingleProducerConsumer.h" />
+    <ClInclude Include="RAKNET\SocketDefines.h" />
+    <ClInclude Include="RAKNET\SocketIncludes.h" />
+    <ClInclude Include="RAKNET\SocketLayer.h" />
+    <ClInclude Include="RAKNET\StatisticsHistory.h" />
+    <ClInclude Include="RAKNET\StringCompressor.h" />
+    <ClInclude Include="RAKNET\StringTable.h" />
+    <ClInclude Include="RAKNET\SuperFastHash.h" />
+    <ClInclude Include="RAKNET\TableSerializer.h" />
+    <ClInclude Include="RAKNET\TCPInterface.h" />
+    <ClInclude Include="RAKNET\TeamBalancer.h" />
+    <ClInclude Include="RAKNET\TeamManager.h" />
+    <ClInclude Include="RAKNET\TelnetTransport.h" />
+    <ClInclude Include="RAKNET\ThreadPool.h" />
+    <ClInclude Include="RAKNET\ThreadsafePacketLogger.h" />
+    <ClInclude Include="RAKNET\TransportInterface.h" />
+    <ClInclude Include="RAKNET\TwoWayAuthentication.h" />
+    <ClInclude Include="RAKNET\UDPForwarder.h" />
+    <ClInclude Include="RAKNET\UDPProxyClient.h" />
+    <ClInclude Include="RAKNET\UDPProxyCommon.h" />
+    <ClInclude Include="RAKNET\UDPProxyCoordinator.h" />
+    <ClInclude Include="RAKNET\UDPProxyServer.h" />
+    <ClInclude Include="RAKNET\VariableDeltaSerializer.h" />
+    <ClInclude Include="RAKNET\VariableListDeltaTracker.h" />
+    <ClInclude Include="RAKNET\VariadicSQLParser.h" />
+    <ClInclude Include="RAKNET\VitaIncludes.h" />
+    <ClInclude Include="RAKNET\WindowsIncludes.h" />
+    <ClInclude Include="RAKNET\WSAStartupSingleton.h" />
+    <ClInclude Include="RAKNET\XBox360Includes.h" />
+    <ClInclude Include="RAKNET\_FindFirst.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="RendererEnums.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="LevelGeneration\Room.h" />
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="SoundComponent.h" />
+    <ClInclude Include="RigidBodyComponent.h" />
+    <ClInclude Include="SphereCollider.h" />
+    <ClInclude Include="StatScriptEvents.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TempSceneSwitch.h" />
+    <ClInclude Include="ThirdPersonCameraComponent.h" />
+    <ClInclude Include="TimedEffectsSubComponent.h" />
+    <ClInclude Include="tinyxml2\tinyxml2.h" />
+    <ClInclude Include="Utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AABBCollider.cpp" />
+    <ClCompile Include="AnimationComponent.cpp" />
+    <ClCompile Include="AnimationData.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
+    <ClCompile Include="BaseNet_Comp.cpp" />
+    <ClCompile Include="BSPTree.cpp" />
+    <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="CapsuleCollider.cpp" />
+    <ClCompile Include="Chest.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="CreditButton.cpp" />
+    <ClCompile Include="CreditState.cpp" />
+    <ClCompile Include="DataManager.cpp" />
+    <ClCompile Include="DeadGameState.cpp" />
+    <ClCompile Include="DevConsole.cpp" />
+    <ClCompile Include="DKEngine.cpp" />
+    <ClCompile Include="DreamKnight.cpp" />
+    <ClCompile Include="EngineState.cpp" />
+    <ClCompile Include="ExitButton.cpp" />
+    <ClCompile Include="Font.cpp" />
+    <ClCompile Include="FontManager.cpp" />
+    <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GuiElement.cpp" />
+    <ClCompile Include="GuiHealthbar.cpp" />
+    <ClCompile Include="GuiImage.cpp" />
+    <ClCompile Include="GuiText.cpp" />
+    <ClCompile Include="GuiTextbox.cpp" />
+    <ClCompile Include="HitManagerComponent.cpp" />
+    <ClCompile Include="HostButton.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="ItemRef.cpp" />
+    <ClCompile Include="Items.cpp" />
+    <ClCompile Include="LevelContainer.cpp" />
+    <ClCompile Include="LevelGeneration\LevelGenerator.cpp" />
+    <ClCompile Include="LightComponent.cpp" />
+    <ClCompile Include="lodepng\lodepng.cpp" />
+    <ClCompile Include="MainMenuButton.cpp" />
+    <ClCompile Include="MaterialComponent.cpp" />
+    <ClCompile Include="MenuState.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="MeshCollider.cpp" />
+    <ClCompile Include="MeshComponent.cpp" />
+    <ClCompile Include="NavMesh.cpp" />
+    <ClCompile Include="NetChestComponent.cpp" />
+    <ClCompile Include="NetClient.cpp" />
+    <ClCompile Include="NetEnemy.cpp" />
+    <ClCompile Include="InventorySubComponent.cpp" />
+    <ClCompile Include="NetEnemyRangeComp.cpp" />
+    <ClCompile Include="PickupControlComponent.cpp" />
+    <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="ProjectileComp.cpp" />
+    <ClCompile Include="ServerGameState.cpp" />
+    <ClCompile Include="ServerLobbyState.cpp" />
+    <ClCompile Include="TimedEffects.cpp" />
+    <ClCompile Include="Pickup.cpp" />
+    <ClCompile Include="PickupManager.cpp" />
+    <ClCompile Include="QuadTree.cpp" />
+    <ClCompile Include="StatScript.cpp" />
+    <ClCompile Include="NetEnemyComp.cpp" />
+    <ClCompile Include="NetPlayer.cpp" />
+    <ClCompile Include="NetPlayerComponent.cpp" />
+    <ClCompile Include="NetServer.cpp" />
+    <ClCompile Include="NetworkVenus.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="LevelGeneration\Tile.cpp" />
+    <ClCompile Include="RAKNET\Base64Encoder.cpp" />
+    <ClCompile Include="RAKNET\BitStream.cpp" />
+    <ClCompile Include="RAKNET\CCRakNetSlidingWindow.cpp" />
+    <ClCompile Include="RAKNET\CCRakNetUDT.cpp" />
+    <ClCompile Include="RAKNET\CheckSum.cpp" />
+    <ClCompile Include="RAKNET\CloudClient.cpp" />
+    <ClCompile Include="RAKNET\CloudCommon.cpp" />
+    <ClCompile Include="RAKNET\CloudServer.cpp" />
+    <ClCompile Include="RAKNET\CommandParserInterface.cpp" />
+    <ClCompile Include="RAKNET\ConnectionGraph2.cpp" />
+    <ClCompile Include="RAKNET\ConsoleServer.cpp" />
+    <ClCompile Include="RAKNET\DataCompressor.cpp" />
+    <ClCompile Include="RAKNET\DirectoryDeltaTransfer.cpp" />
+    <ClCompile Include="RAKNET\DR_SHA1.cpp" />
+    <ClCompile Include="RAKNET\DS_BytePool.cpp" />
+    <ClCompile Include="RAKNET\DS_ByteQueue.cpp" />
+    <ClCompile Include="RAKNET\DS_HuffmanEncodingTree.cpp" />
+    <ClCompile Include="RAKNET\DS_Table.cpp" />
+    <ClCompile Include="RAKNET\DynDNS.cpp" />
+    <ClCompile Include="RAKNET\EmailSender.cpp" />
+    <ClCompile Include="RAKNET\EpochTimeToString.cpp" />
+    <ClCompile Include="RAKNET\FileList.cpp" />
+    <ClCompile Include="RAKNET\FileListTransfer.cpp" />
+    <ClCompile Include="RAKNET\FileOperations.cpp" />
+    <ClCompile Include="RAKNET\FormatString.cpp" />
+    <ClCompile Include="RAKNET\FullyConnectedMesh2.cpp" />
+    <ClCompile Include="RAKNET\Getche.cpp" />
+    <ClCompile Include="RAKNET\Gets.cpp" />
+    <ClCompile Include="RAKNET\GetTime.cpp" />
+    <ClCompile Include="RAKNET\gettimeofday.cpp" />
+    <ClCompile Include="RAKNET\GridSectorizer.cpp" />
+    <ClCompile Include="RAKNET\HTTPConnection.cpp" />
+    <ClCompile Include="RAKNET\HTTPConnection2.cpp" />
+    <ClCompile Include="RAKNET\IncrementalReadInterface.cpp" />
+    <ClCompile Include="RAKNET\Itoa.cpp" />
+    <ClCompile Include="RAKNET\LinuxStrings.cpp" />
+    <ClCompile Include="RAKNET\LocklessTypes.cpp" />
+    <ClCompile Include="RAKNET\LogCommandParser.cpp" />
+    <ClCompile Include="RAKNET\MessageFilter.cpp" />
+    <ClCompile Include="RAKNET\NatPunchthroughClient.cpp" />
+    <ClCompile Include="RAKNET\NatPunchthroughServer.cpp" />
+    <ClCompile Include="RAKNET\NatTypeDetectionClient.cpp" />
+    <ClCompile Include="RAKNET\NatTypeDetectionCommon.cpp" />
+    <ClCompile Include="RAKNET\NatTypeDetectionServer.cpp" />
+    <ClCompile Include="RAKNET\NetworkIDManager.cpp" />
+    <ClCompile Include="RAKNET\NetworkIDObject.cpp" />
+    <ClCompile Include="RAKNET\PacketConsoleLogger.cpp" />
+    <ClCompile Include="RAKNET\PacketFileLogger.cpp" />
+    <ClCompile Include="RAKNET\PacketizedTCP.cpp" />
+    <ClCompile Include="RAKNET\PacketLogger.cpp" />
+    <ClCompile Include="RAKNET\PacketOutputWindowLogger.cpp" />
+    <ClCompile Include="RAKNET\PluginInterface2.cpp" />
+    <ClCompile Include="RAKNET\PS4Includes.cpp" />
+    <ClCompile Include="RAKNET\Rackspace.cpp" />
+    <ClCompile Include="RAKNET\RakMemoryOverride.cpp" />
+    <ClCompile Include="RAKNET\RakNetCommandParser.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2_360_720.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2_Berkley.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2_Berkley_NativeClient.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2_NativeClient.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2_PS3_PS4.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2_PS4.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2_Vita.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2_WindowsStore8.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2_Windows_Linux.cpp" />
+    <ClCompile Include="RAKNET\RakNetSocket2_Windows_Linux_360.cpp" />
+    <ClCompile Include="RAKNET\RakNetStatistics.cpp" />
+    <ClCompile Include="RAKNET\RakNetTransport2.cpp" />
+    <ClCompile Include="RAKNET\RakNetTypes.cpp" />
+    <ClCompile Include="RAKNET\RakPeer.cpp" />
+    <ClCompile Include="RAKNET\RakSleep.cpp" />
+    <ClCompile Include="RAKNET\RakString.cpp" />
+    <ClCompile Include="RAKNET\RakThread.cpp" />
+    <ClCompile Include="RAKNET\RakWString.cpp" />
+    <ClCompile Include="RAKNET\Rand.cpp" />
+    <ClCompile Include="RAKNET\RandSync.cpp" />
+    <ClCompile Include="RAKNET\ReadyEvent.cpp" />
+    <ClCompile Include="RAKNET\RelayPlugin.cpp" />
+    <ClCompile Include="RAKNET\ReliabilityLayer.cpp" />
+    <ClCompile Include="RAKNET\ReplicaManager3.cpp" />
+    <ClCompile Include="RAKNET\Router2.cpp" />
+    <ClCompile Include="RAKNET\RPC4Plugin.cpp" />
+    <ClCompile Include="RAKNET\SecureHandshake.cpp" />
+    <ClCompile Include="RAKNET\SendToThread.cpp" />
+    <ClCompile Include="RAKNET\SignaledEvent.cpp" />
+    <ClCompile Include="RAKNET\SimpleMutex.cpp" />
+    <ClCompile Include="RAKNET\SocketLayer.cpp" />
+    <ClCompile Include="RAKNET\StatisticsHistory.cpp" />
+    <ClCompile Include="RAKNET\StringCompressor.cpp" />
+    <ClCompile Include="RAKNET\StringTable.cpp" />
+    <ClCompile Include="RAKNET\SuperFastHash.cpp" />
+    <ClCompile Include="RAKNET\TableSerializer.cpp" />
+    <ClCompile Include="RAKNET\TCPInterface.cpp" />
+    <ClCompile Include="RAKNET\TeamBalancer.cpp" />
+    <ClCompile Include="RAKNET\TeamManager.cpp" />
+    <ClCompile Include="RAKNET\TelnetTransport.cpp" />
+    <ClCompile Include="RAKNET\ThreadsafePacketLogger.cpp" />
+    <ClCompile Include="RAKNET\TwoWayAuthentication.cpp" />
+    <ClCompile Include="RAKNET\UDPForwarder.cpp" />
+    <ClCompile Include="RAKNET\UDPProxyClient.cpp" />
+    <ClCompile Include="RAKNET\UDPProxyCoordinator.cpp" />
+    <ClCompile Include="RAKNET\UDPProxyServer.cpp" />
+    <ClCompile Include="RAKNET\VariableDeltaSerializer.cpp" />
+    <ClCompile Include="RAKNET\VariableListDeltaTracker.cpp" />
+    <ClCompile Include="RAKNET\VariadicSQLParser.cpp" />
+    <ClCompile Include="RAKNET\VitaIncludes.cpp" />
+    <ClCompile Include="RAKNET\WSAStartupSingleton.cpp" />
+    <ClCompile Include="RAKNET\_FindFirst.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="LevelGeneration\Room.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="RigidBodyComponent.cpp" />
+    <ClCompile Include="SphereCollider.cpp" />
+    <ClCompile Include="TempSceneSwitch.cpp" />
+    <ClCompile Include="ThirdPersonCameraComponent.cpp" />
+    <ClCompile Include="TimedEffectsSubComponent.cpp" />
+    <ClCompile Include="tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="Utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DreamKnight.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="DreamKnight.ico" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Animated_PS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableDebuggingInformation>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
+    </FxCompile>
+    <FxCompile Include="Animated_VS.hlsl">
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableDebuggingInformation>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
+    </FxCompile>
+    <FxCompile Include="Font_PS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableDebuggingInformation>
+    </FxCompile>
+    <FxCompile Include="Font_VS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableDebuggingInformation>
+    </FxCompile>
+    <FxCompile Include="Gui_PS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableDebuggingInformation>
+    </FxCompile>
+    <FxCompile Include="Gui_VS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableDebuggingInformation>
+    </FxCompile>
+    <FxCompile Include="Simple_Texture_PS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableDebuggingInformation>
+    </FxCompile>
+    <FxCompile Include="Simple_Texture_VS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableDebuggingInformation>
+    </FxCompile>
+    <FxCompile Include="Trivial_PS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableDebuggingInformation>
+    </FxCompile>
+    <FxCompile Include="Trivial_VS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)%(Filename).cso</ObjectFileOutput>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
+      <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableDebuggingInformation>
+    </FxCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
